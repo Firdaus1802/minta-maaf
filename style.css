@@ -1,0 +1,471 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Plus Jakarta Sans", sans-serif;
+  background-color: #f2f2f7;
+  background-image: linear-gradient(180deg, #fceef2 0%, #f2f2f7 60%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  padding: 16px;
+  color: #000000;
+}
+
+.ios-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* iOS Sheet Card */
+.ios-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 26px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 28px 22px;
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+  animation: cardIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Subtle Pill Badge */
+.ios-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.05);
+  color: #8e8e93;
+  padding: 4px 11px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  margin-bottom: 16px;
+}
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff2d55;
+  display: inline-block;
+}
+
+.pill-dot.orange { background: #ff9500; }
+.pill-dot.green { background: #34c759; }
+
+.ios-pill.warning {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.ios-pill.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+h1 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.4px;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+p.subtitle {
+  font-size: 13.5px;
+  color: #6c6c70;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+/* Clean iOS Input */
+.input-group {
+  margin-bottom: 12px;
+}
+
+input {
+  width: 100%;
+  background: #f0f0f5;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14.5px;
+  font-family: inherit;
+  color: #000000;
+  text-align: center;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  background: #e6e6ed;
+}
+
+input::placeholder {
+  color: #aeaeb2;
+}
+
+/* Input Shake Animation on Error */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+input.shake {
+  animation: shake 0.35s ease;
+  border-color: #ff2d55;
+  background: #fff0f3;
+}
+
+/* iOS Buttons with Spring Lift */
+.ios-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 14px;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  padding: 12px 18px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ios-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.ios-btn.primary {
+  background: #ff2d55;
+  color: #ffffff;
+  width: 100%;
+  box-shadow: 0 4px 14px rgba(255, 45, 85, 0.25);
+}
+
+.ios-btn.primary:hover {
+  background: #f0244b;
+  box-shadow: 0 8px 22px rgba(255, 45, 85, 0.38);
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#yesBtn {
+  flex: 1.2;
+}
+
+.ios-btn.secondary {
+  background: #e5e5ea;
+  color: #000000;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.ios-btn.secondary:hover {
+  background: #dbdbdf;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.ios-btn:active {
+  transform: scale(0.96) !important;
+  opacity: 0.9;
+}
+
+/* Treat List (iOS Apple Pointer Pop Effect) */
+.treat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.treat-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 12px 16px;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+/* iOS Spring Hover POP UP Effect */
+.treat-item:hover {
+  transform: translateY(-4px) scale(1.025);
+  background: #ffffff;
+  border-color: rgba(255, 45, 85, 0.35);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09), 0 4px 12px rgba(255, 45, 85, 0.14);
+  z-index: 2;
+}
+
+.treat-item:hover .treat-icon {
+  transform: scale(1.15) rotate(4deg);
+  background: #ffe4eb;
+}
+
+.treat-item:hover .chevron {
+  transform: translateX(4px);
+  color: #ff2d55;
+}
+
+.treat-item:active {
+  transform: scale(0.97) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.treat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #f5f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.treat-text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.treat-text .title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #000000;
+  letter-spacing: -0.2px;
+}
+
+.treat-text .desc {
+  font-size: 11.5px;
+  color: #8e8e93;
+  margin-top: 1px;
+}
+
+.chevron {
+  color: #c7c7cc;
+  font-size: 1.25rem;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.treat-item.highlight {
+  background: #fff5f7;
+  border: 1px solid #ffccd5;
+}
+
+.treat-item.highlight:hover {
+  background: #ffeef3;
+  border-color: #ff2d55;
+  box-shadow: 0 14px 32px rgba(255, 45, 85, 0.2), 0 4px 12px rgba(255, 45, 85, 0.15);
+}
+
+.treat-item.highlight .treat-text .title {
+  color: #ff2d55;
+}
+
+/* iOS Ticket / Voucher */
+.ios-ticket {
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 14px 0 16px 0;
+  text-align: left;
+}
+
+.ticket-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #ff2d55;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+#chosenTreatText {
+  color: #000000;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+#dealNote {
+  font-size: 12px;
+  color: #6c6c70;
+  line-height: 1.45;
+}
+
+/* WhatsApp Button */
+.wa-action {
+  margin-top: 4px;
+}
+
+.wa-btn {
+  background: #25D366;
+  color: #ffffff;
+  width: 100%;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+}
+
+.wa-btn:hover {
+  background: #20bd5a;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.4);
+}
+
+.wa-svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.timer-hint {
+  font-size: 11px;
+  color: #8e8e93;
+  margin-top: 8px;
+}
+
+.link-btn {
+  background: transparent;
+  border: none;
+  color: #8e8e93;
+  font-size: 12.5px;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 12px;
+  padding: 4px 8px;
+}
+
+.link-btn:hover {
+  color: #000000;
+}
+
+/* iOS Alert Modal */
+.popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+}
+
+.popup.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.ios-alert {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 24px 20px 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-width: 290px;
+  width: 85%;
+  position: relative;
+  animation: alertIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes alertIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.alert-icon {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+.ios-alert h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.ios-alert p {
+  font-size: 12.5px;
+  color: #6c6c70;
+  line-height: 1.4;
+}
+
+/* Tiny Hearts Animation */
+.hearts {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #ff2d55;
+  transform: rotate(45deg);
+  animation: floatHeart 1.6s ease forwards;
+  opacity: 0.85;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #ff2d55;
+  border-radius: 50%;
+}
+
+.heart::before { top: -8px; left: 0; }
+.heart::after { left: -8px; top: 0; }
+
+@keyframes floatHeart {
+  to {
+    transform: translateY(-120px) rotate(45deg);
+    opacity: 0;
+  }
+}
